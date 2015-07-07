@@ -6,9 +6,9 @@ The in­no­va­ti­ve re­se­arch en­vi­ron­ment al­lows any num­ber of d
 
 For more information see the HyperImage project on Leuphana (http://www.leuphana.de/institute/icam/forschung-projekte/hyperimage.html)
 
-In order to use the new design with HyperImage projects, you just need to add these finals to any post petal export from the HyperImage Editor. 
+In order to use the new design with HyperImage projects, you will need to download and add these finals to any post petal export from the HyperImage Editor. 
 
-To add to  HyperImage projects that already include the HI Reader, you can do the following: 
+To add to HyperImage projects that already include the HI Reader, you can do the following: 
 
 1. replace the index.html file in your HyperImage project with the one included in this repository
 2. replace the reader folder in your HyperImage project with the one included in this repository
