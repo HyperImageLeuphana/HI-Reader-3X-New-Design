@@ -30,6 +30,7 @@ STILL TO DO:
 
 *Light-table debugging and functionality in Mobile versions
   
+*Fix resolution of group images
 
 
 ###########################################
