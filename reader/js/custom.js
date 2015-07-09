@@ -48,7 +48,6 @@ $( document ).ready(function() {
 			$('#canvasWrapper').css({position:'fixed'});
 			$('#infotext').addClass('overlay');
 			$('#loadingIndicator').css({display:'none'});
-			$('#sidebar').addClass('overlay');
 			$('#sidebar').css({position:'fixed'});
 			$('#canvas').addClass('overlay');
 		} else {
@@ -56,7 +55,6 @@ $( document ).ready(function() {
 			$('#canvasWrapper').css({position:'inherit'});
 			$('#infotext').removeClass('overlay');
 			$('#canvas').removeClass('overlay');
-			$('#sidebar').removeClass('overlay');
 			$('#sidebar').css({position:'inherit'});
 		}
 			$("#CANVAS_MENU").slideToggle("slow");
@@ -71,7 +69,6 @@ $( document ).ready(function() {
 		$('#canvasWrapper').css({position:'inherit'});
 		$('#infotext').removeClass('overlay');
 		$('#canvas').removeClass('overlay');
-		$('#sidebar').removeClass('overlay');
 		$('#sidebar').css({position:'inherit'});
 		$('#CANVAS_MENU').slideToggle("slow");
 	});

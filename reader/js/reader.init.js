@@ -303,32 +303,31 @@ function loadProjectFile(data, success) {
 	 */
     reader.start = data.getElementsByTagName("link")[0].getAttribute("ref");
     
-    	/*
+    	 /*
 	 * extract and sort template fields
 	 */
-
-    templates = data.getElementsByTagName("template");
-    sortedFields = new Array();
-    var htmlFields = "";
-    for (i = 0; i < templates.length; i++) {
-        var templateID = templates[i].getAttribute("id");
- 
-        keys = templates[i].getElementsByTagName("key");
-        for (keyID = 0; keyID < keys.length; keyID++) {
-            sortedFields[keys[keyID].getAttribute("rank") - 1] = templateID + "_" + keys[keyID].getAttribute("tagName");
-            var tempKey = reader.project.templates[templateID + "_" + keys[keyID].getAttribute("tagName")] = new Object();
-            tempKey.key = keys[keyID].getAttribute("tagName");
-            tempKey.template = templateID;
-            
-            tempLangs = keys[keyID].getElementsByTagName("displayName");
-            for (langID = 0; langID < tempLangs.length; langID++) {
-                if (tempLangs[langID].firstChild != null)
-                    tempKey[tempLangs[langID].getAttribute("xml:lang")] = tempLangs[langID].firstChild.nodeValue;
-                else tempKey[tempLangs[langID].getAttribute("xml:lang")] = 'x';
-            }
-        }
-    }
-    reader.project.sortedFields = sortedFields;
+	templates = data.getElementsByTagName("template");
+	sortedFields = new Array();
+	var htmlFields = "";
+	for (i = 0; i < templates.length; i++) {
+		var templateID = templates[i].getAttribute("id");
+		
+		keys = templates[i].getElementsByTagName("key");
+		for (keyID = 0; keyID < keys.length; keyID++) {
+			sortedFields[keys[keyID].getAttribute("rank")-1] = templateID+"_"+keys[keyID].getAttribute("tagName");
+			var tempKey = reader.project.templates[templateID+"_"+keys[keyID].getAttribute("tagName")] = new Object();
+			tempKey.key = keys[keyID].getAttribute("tagName");
+			tempKey.template = templateID;
+			if ( keys[keyID].getAttribute("richText") == "true" ) tempKey.richText = true; else tempKey.richText = false;
+			tempLangs = keys[keyID].getElementsByTagName("displayName");
+			for (langID = 0; langID<tempLangs.length; langID++) {
+				if ( tempLangs[langID].firstChild != null )
+					tempKey[tempLangs[langID].getAttribute("xml:lang")] = tempLangs[langID].firstChild.nodeValue;
+				else tempKey[tempLangs[langID].getAttribute("xml:lang")] = 'x';
+			}
+		}
+	}
+	reader.project.sortedFields = sortedFields; 
     
     /*
 	 * extract search index file names

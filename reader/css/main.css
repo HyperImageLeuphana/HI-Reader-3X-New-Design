@@ -30,6 +30,10 @@ ul {
 	padding: 0px 0px 0px 20px;
 }
 
+br {
+	display:block;
+}
+
 /* FONT */
 
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
@@ -1039,15 +1043,22 @@ a.sidebar-icon-back {
     z-index: 100;
 }
 
+#info-text {
+	display:block;
+}
+
 #infotext {
-	z-index:10;
-	position:absolute;
-	overflow: hidden;
-	float: left;
-	text-transform:uppercase;
-	width:auto;
-	padding-left:5px;
-	padding-right:5px;
+    z-index: 10;
+    position: absolute;
+    overflow: hidden;
+    float: left;
+    text-transform: uppercase;
+    width: auto;
+    padding-left: 10px;
+    padding-right:10px;
+    max-width: 70%;
+    top: -10px;
+    display:block!important;
 }
 
 .infocanvas {
@@ -1064,7 +1075,7 @@ a.sidebar-icon-back {
 	float:right;
 	color:#00cc99;
 	text-align: center;
-	line-height: 24px;
+	line-height: 22px;
 }
 
 .infocanvas:empty {
@@ -1074,7 +1085,6 @@ a.sidebar-icon-back {
 
 .infotext {
 	margin-top:58px;
-	margin-left:10px;
 	background-color:inherit;
 }
 
