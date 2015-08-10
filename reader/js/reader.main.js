@@ -1189,6 +1189,7 @@ function displayLightTable() {
     	$('header').css({height:'100px'});
     }
     $('#infotext').css({display:'block'});
+    $('#infotext').css({opacity:'inherit'});
     
     function syncTableToModel() {
         var frames = new Array();
@@ -2160,7 +2161,7 @@ function setGUI(forceLoad) {
 				});
 			}
 			if (screen.width <= 1024) {
-				// TO DO add tooltip on taphold
+				
 				$(function(){
 					$('#canvasTooltip').css('top', '100px');
                     $('#canvasTooltip').css('left', '0px');
@@ -2171,7 +2172,13 @@ function setGUI(forceLoad) {
             			e.preventDefault();
 						var layerID = $(this).attr('id');
 						layerID = layerID.substring(0, layerID.length-6);
-						setTimeout(hideContextmenu, 3000);
+						// triggers tooltip on taphold 
+						$(e.currentTarget).trigger('mouseover');
+						if ( layer.opacity > 0 ) $(e.currentTarget).css('fill-opacity', layer.opacity)
+						else $(e.currentTarget).css("stroke-width", 2*(1/reader.zoom.cur));
+						$('.tooltip').show();
+						$('.off').show();
+						//triggers context menu on taphold
 						$('#layer-context').show();					
 						$('#layer-to-lita').one('click', function(e) {
 								addLayerToLightTable(layerID);
@@ -2180,18 +2187,23 @@ function setGUI(forceLoad) {
 						$('#layer-tracking').one('click', function(e) {
 								e.preventDefault();
 								location.hash=layerID+'/sites';
+								$("#layer-context").hide();
+								$('.tooltip').hide();
+								$('[id$=_group]').css('fill-opacity', 0.0);
+								$('[id$=_group]').css('stroke-width', 0);
+								$('.off').hide();
 						});
 						$('#layer-ref').one('click', function(e) {
 								e.preventDefault();
 								location.hash=layerID+'/refs';
+								$("#layer-context").hide();
+								$('.tooltip').hide();
+								$('[id$=_group]').css('fill-opacity', 0.0);
+								$('[id$=_group]').css('stroke-width', 0);
+								$('.off').hide();
 						});
 
 					});
-							
-				function hideContextmenu () {
-	    			$("#layer-context").hide();
-	    			
-				}
 				});
 				$('svg').css({marginTop:'0'});
 			}	

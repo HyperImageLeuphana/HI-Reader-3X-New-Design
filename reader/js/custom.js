@@ -226,4 +226,15 @@ $(window).load(function() {
 		displayLightTable();
 	});
 });
+
+$(document).ready(function() {
+	$('.context-close').off("vclick");
+	$(".context-close").on("vclick", function( e) {
+		$("#layer-context").hide();
+	    $('.tooltip').hide();
+	    $('[id$=_group]').css('fill-opacity', 0.0);
+	    $('[id$=_group]').css('stroke-width', 0);
+	    $('.off').hide();
+	});
+});
 		
