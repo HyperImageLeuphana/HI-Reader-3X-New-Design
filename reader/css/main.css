@@ -1039,6 +1039,26 @@ a.sidebar-icon-back {
 	text-shadow: none;
 	text-transform:none;
 }
+.zoom-in {
+	font-size:30px;
+	color:#00cc99;
+}
+
+.zoom-out {
+	font-size:30px;
+	color:#00cc99;
+	transform: rotateY(90deg);
+	padding-left:5px;
+}
+
+.zoom {
+	-webkit-touch-callout: none!important;
+	margin-top:50px;
+	z-index:1000;
+	display:none;
+	position:absolute;	
+	width:70%;
+}
 #loadingIndicator {
     margin-top: 72px;
     margin-right: 5px;
@@ -1444,11 +1464,21 @@ li.layer-context-list, li.lita-context-list {
 }
 @media only screen and (max-device-width : 1024px) {
 
+.zoom {
+	-webkit-touch-callout: none!important;
+	margin-top:-3px;
+	margin-left:90%;
+	z-index:1000;
+	display:block;
+	position:fixed;	
+	width:100%;
+}
+
 .MENU_ZOOM_IN {
-	display:none;
+	display:block;
 }
 .MENU_ZOOM_OUT {
-	display:none;
+	display:block;
 }
 li.layer-context-list, li.lita-context-list {
 	-webkit-user-select: none!important;

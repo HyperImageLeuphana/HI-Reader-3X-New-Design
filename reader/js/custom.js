@@ -108,15 +108,6 @@ $(window).on('popstate', function() {
 		findHigherRes();
 	}
 });
-
-/* Fixes SVG margin top display */
-$(document).ready(function() {
-	$('#languageMenu').on("vclick", function(e) {
-		$('svg').css({marginTop:'0'});
-		$('svg').css({top:'0'});
-			
-	});
-}); 
 	
 /* for mobile/tablet allows lita menu items to function on tap */	
 $(window).load(function() {

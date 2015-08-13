@@ -787,10 +787,6 @@ function initContextMenus() {
 			});
 }
 
-function initPanzom (){
-	 $('#canvasImageGroup').panzoom('enable');
-}
-
 function initGUI() {
 	/*
 	 * set up menu bar
@@ -1013,7 +1009,6 @@ function initReader() {
                                     newLocalTable(false);
                                     initGUI();
                                     initContextMenus();
-                                    initPanzom ();
                                     setLanguage(reader.project.defaultLang);
                                     $(Object.keys(reader.project.search.files)).each(function(index, fileLang) {
                                         $.get('postPetal/' + reader.project.search.files[fileLang], function(data, success) {
