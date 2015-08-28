@@ -103,6 +103,7 @@ function urlFunction (){
 $(window).on('popstate', function() {
 	$('.mobile-sidebar-icon').css({display:'inherit'});	
 	showTab(reader.prefs['TABS_STANDARD']);
+	$('.zoom-in').removeClass('non');
 	if (screen.width <= 1024) {			
 		loadHiResIfNeeded();
 		findHigherRes();
@@ -225,7 +226,7 @@ $(document).ready(function() {
 	    $('.tooltip').hide();
 	    $('[id$=_group]').css('fill-opacity', 0.0);
 	    $('[id$=_group]').css('stroke-width', 0);
-	    $('.off').hide();
+	    $('.off').fadeOut(1000);
 	});
 });
 		

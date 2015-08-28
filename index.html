@@ -45,6 +45,7 @@
         <link rel="stylesheet" href="reader/css/jquery.contextMenu.css" />
         <link rel="stylesheet" href="reader/css/miniplayer.css" />
         <link rel='stylesheet' href="font/typicons.min.css" />
+        <link rel="stylesheet" href="font/raphaelicons.css" />
 
         <!-- jquery and jquery plugins -->
         <script type="text/javascript" src="reader/js/libs/modernizr-2.6.2.min.js"></script>
@@ -98,6 +99,8 @@
 					<a class="menu-icon" href="javascript:urlFunction();"><span class="typcn typcn-th-menu"><span></a>
 				</li>
 			</ul>
+			<div id="loadingIndicator">&nbsp;</div>
+			<div id="loadingIndicator">&nbsp;</div>
 			<ul id="right-nav">
 				<li class="MENU_LANGUAGE language-title" id="languageMenu">	
 				</li>
@@ -112,9 +115,8 @@
 		</header>
 		<div id="info-container">
 		<div id="info-text">
-			<div id="loadingIndicator">&nbsp;</div>
-			<div id="loadingIndicator">&nbsp;</div>
-			<div id="infotext" class="infocanvas infotext infolita infogroup"></div>
+			<div id="infotext" class="infocanvas infotext infogroup"></div>
+			<div class="infolita"></div>
 		</div>
 		<div class="mobile-sidebar-icon"><a href="javascript:urlFunction();" class="sidebar-icon sidebar-display"><span class="typcn typcn-chevron-left"></span>&nbsp;</a></div>
 		<div class="mobile-sidebar-back"><a href="javascript:urlFunction();" class="sidebar-icon-back sidebar-display"><span class="typcn typcn-chevron-right"></span>&nbsp;</a></div>
@@ -184,7 +186,15 @@
 						<li id="beginBookmarks" class="separator"><hr /></li>
 					</ul>
 				</li>
+				<li class="right-nav-small">
+					<ul id="right-nav-small">
+						<li class="MENU_LANGUAGE language-title" id="languageMenu">	</li>
+						<li class="right-nav-about"><a class="MENU_ABOUT" href="javascript:aboutReader();">About</a></li>
+						<li class="right-nav-imprint"><a class="MENU_IMPRINT" href="#imprint/">&nbsp;</a></li>
+					</ul>
+				</li>
 			</ul>
+			
 			<div id="canvasTooltip" class="tooltip"><div class="tooltipContent">&nbsp;</div><div class="tooltipBackground">&nbsp;</div></div>
 			<div id="imageLoadingIndicator"></div>	
 			

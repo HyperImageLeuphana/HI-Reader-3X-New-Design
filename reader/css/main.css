@@ -49,6 +49,21 @@ br {
   font-style: normal;
 }
 
+.icon {
+	display: inline-block;
+	font-family: 'RaphaelIcons';
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 0;
+	-webkit-font-smoothing: antialiased;
+	font-size: 240%;
+	background:transparent;
+	vertical-align:middle;
+	top:0 !important;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -428,6 +443,9 @@ li.separator:hover {
 	padding-left:10px;
 }
 
+.right-nav-small {
+		display:none;
+}
 
 #right-nav {
 	float:right;
@@ -504,28 +522,28 @@ li.separator:hover {
 }
 
 
-.MENU_TEXTS ul, .MENU_GROUPS ul, .MENU_LITA ul, .MENU_GALLERY ul, .MENU_BOOKMARK ul, .MENU_DISPLAY ul, .MENU_NAVIGATION ul, li.MENU_OVERVIEW.mobile-overview ul  {
+.MENU_TEXTS ul, .MENU_GROUPS ul, .MENU_LITA ul, .MENU_GALLERY ul, .MENU_BOOKMARK ul, .MENU_DISPLAY ul, .MENU_NAVIGATION ul, li.MENU_OVERVIEW.mobile-overview ul, li.right-nav-small ul  {
 	padding-left:20px;
 }
-.MENU_TEXTS li, .MENU_GROUPS li, .MENU_LITA li, .MENU_GALLERY li, .MENU_BOOKMARK li, .MENU_DISPLAY li, .MENU_NAVIGATION li, li.MENU_OVERVIEW.mobile-overview li {
+.MENU_TEXTS li, .MENU_GROUPS li, .MENU_LITA li, .MENU_GALLERY li, .MENU_BOOKMARK li, .MENU_DISPLAY li, .MENU_NAVIGATION li, li.MENU_OVERVIEW.mobile-overview li, li.right-nav-small li {
 	list-style-type:none;
 	text-transform:none;
 } 
 
-.MENU_TEXTS a, .MENU_GROUPS #groupmenu a, .MENU_LITA a, .MENU_GALLERY a, .MENU_BOOKMARK a, .MENU_DISPLAY a, .MENU_NAVIGATION a, li.MENU_OVERVIEW.mobile-overview a {
+.MENU_TEXTS a, .MENU_GROUPS #groupmenu a, .MENU_LITA a, .MENU_GALLERY a, .MENU_BOOKMARK a, .MENU_DISPLAY a, .MENU_NAVIGATION a, li.MENU_OVERVIEW.mobile-overview a, .right-nav-small a {
 	color:#000!important;
 }
 
-.MENU_TEXTS a:hover, .MENU_GROUPS #groupmenu a:hover, .MENU_LITA a:hover, .MENU_GALLERY a:hover, .MENU_BOOKMARK a:hover, .MENU_DISPLAY a:hover, .MENU_NAVIGATION a:hover, li.MENU_OVERVIEW.mobile-overview a:hover {
+.MENU_TEXTS a:hover, .MENU_GROUPS #groupmenu a:hover, .MENU_LITA a:hover, .MENU_GALLERY a:hover, .MENU_BOOKMARK a:hover, .MENU_DISPLAY a:hover, .MENU_NAVIGATION a:hover, li.MENU_OVERVIEW.mobile-overview a:hover, .right-nav-small a:hover {
 	color:#00cc99;
 }
 
-.MENU_TEXTS li a:hover, .MENU_GROUPS #groupmenu li a:hover, .MENU_LITA li a:hover, .MENU_GALLERY li a:hover, .MENU_BOOKMARK li a:hover, .MENU_DISPLAY li a:hover, .MENU_NAVIGATION li a:hover, li.MENU_OVERVIEW.mobile-overview li a:hover {
+.MENU_TEXTS li a:hover, .MENU_GROUPS #groupmenu li a:hover, .MENU_LITA li a:hover, .MENU_GALLERY li a:hover, .MENU_BOOKMARK li a:hover, .MENU_DISPLAY li a:hover, .MENU_NAVIGATION li a:hover, li.MENU_OVERVIEW.mobile-overview li a:hover, li.right-nav-small li a:hover {
 	color:#00cc99!important;
 }
 
 
-.MENU_TEXTS li.disabled a:hover, .MENU_GROUPS #groupmenu li.disabled a:hover, .MENU_LITA li.disabled a:hover, .MENU_GALLERY li.disabled a:hover, .MENU_BOOKMARK li.disabled a:hover, .MENU_DISPLAY li.disabled a:hover, .MENU_NAVIGATION li.disabled a:hover {
+.MENU_TEXTS li.disabled a:hover, .MENU_GROUPS #groupmenu li.disabled a:hover, .MENU_LITA li.disabled a:hover, .MENU_GALLERY li.disabled a:hover, .MENU_BOOKMARK li.disabled a:hover, .MENU_DISPLAY li.disabled a:hover, .MENU_NAVIGATION li.disabled a:hover, .right-nav-small li.disabled a:hover {
 	color:#BFF2E5!important;
 }
 
@@ -598,7 +616,15 @@ ul.tabmenu li.selected a {
   display:none;
 }
 
+.non, .non > a {
+	pointer-events: none;
+	background-color: none;
+	color: #BFF2E5 !important;
+	text-decoration: none;	
+}
+
 .disabled, .disabled > a {
+	pointer-events:none;
 	cursor: default;
 	background-color: #ffffff !important;
 	color: #BFF2E5 !important;
@@ -743,7 +769,7 @@ ul.tabmenu li.selected a {
 	box-shadow: 0px 9px 15px #000;	
 }
 .ltSelected .ltFrameTitle {
-	background-color: #f0f0a2;
+	background-color: #BFF2E5!important;
 }
 .ltFrameTitle {
 	position: absolute; 
@@ -751,12 +777,13 @@ ul.tabmenu li.selected a {
 	top: 0px; 
 	left: 0px;
 	width: 100%; 
-	height: 14px; 
+	height: 13px; 
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-top: 2px;
-	background-color: white;	
+	background-color: #F0F0F0 !important;	
 	overflow: hidden;
+	line-height:12px;
 }
 .ltFrame.ltSelected .ltFrameContent {
 	background-color: white;
@@ -820,7 +847,7 @@ ul.tabmenu li.selected a {
 	box-shadow: 0px 9px 15px #000;	
 }
 .ltFrame.ltAnnotation .ltFrameTitle {
-	visibility: hidden;
+	visibility: visible;
 }
 .ltFrame.ltAnnotation.ltSelected .ltFrameTitle {
 	visibility: visible;
@@ -1057,12 +1084,12 @@ a.sidebar-icon-back {
 	z-index:1000;
 	display:none;
 	position:absolute;	
-	width:70%;
+	width:auto;
 }
 #loadingIndicator {
-    margin-top: 72px;
+    margin-top: 0px;
     margin-right: 5px;
-    margin-left: 10px;
+    margin-left: 300px;
     padding: 0px;
     max-width: 24px;
     max-height: 24px;
@@ -1087,7 +1114,7 @@ a.sidebar-icon-back {
 
 #infotext {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     float: left;
     text-transform: uppercase;
@@ -1095,57 +1122,50 @@ a.sidebar-icon-back {
     padding-left: 10px;
     padding-right:10px;
     max-width: 70%;
-    top: -3px;
-    display:block!important;
+    top: 0px;
+    display:block;
+    border:1px dotted #00cc99;
+    text-align: center;
+    margin-top:48px;
+    line-height: 22px;
+    color:#00cc99;
+    font-size: 0.750em;
 }
-
-.infocanvas {
-	position:fixed;
-	z-index:100;
-	overflow: hidden;
-	line-height: 24px;
-	text-transform:uppercase;
-	width:10%;
-	margin-top:48px;
-	text-align: center;
-	color:#00cc99;
-	border:1px dotted #00cc99;
-	float:right;
-	color:#00cc99;
-	text-align: center;
-	line-height: 22px;
-}
-
-.infocanvas:empty {
-	display:none;
-}
-
 
 .infotext {
 	margin-top:58px;
 	background-color:inherit;
 }
 
-.infotext:empty {
-	display:none;
-}
 
 .infolita {
 	background-color:inherit;
+	z-index: 10;
+    position: fixed;
+    overflow: hidden;
+    float: left;
+    text-transform: uppercase;
+    width: auto;
+    padding-left: 10px;
+    padding-right:10px;
+    max-width: 70%;
+    top: 0px;
+    display:block;
+    border:1px dotted #00cc99;
+    text-align: center;
+    margin-top:48px;
+    line-height: 24px;
+    color:#00cc99;
+    display:none;
+    font-size:0.750em;
 }
 
-.infolita:empty {
-	display:none;
-}
 
 .infogroup {
 	margin-top:58px;
 	background-color:inherit;
 }
 
-.infogroup:empty {
-	display:none;
-}
 
 .infoimage {
 	background-color:#ffffff;
@@ -1337,8 +1357,8 @@ li.layer-context-list, li.lita-context-list {
 	display:none;
 	border:1px solid #00cc99;
 	background-color:#ffffff;
-	width:222px;
-	height:250px;
+	width:auto;
+	height:auto;
 	z-index:1000;
 	margin-top:20px;
 	margin-left:20px;
@@ -1464,6 +1484,50 @@ li.layer-context-list, li.lita-context-list {
 }
 @media only screen and (max-device-width : 1024px) {
 
+.ui-resizable-se {
+	width:50px!important;
+	height:50px!important;
+}
+
+#infotext {
+    z-index: 10;
+    position: fixed;
+    overflow: hidden;
+    float: left;
+    text-transform: uppercase;
+    width: auto;
+    padding-left: 10px;
+    padding-right:10px;
+    max-width: 80%;
+    top: 6px;
+    display:block;
+    border:1px dotted #00cc99;
+    text-align: center;
+    margin-top:48px;
+    line-height: 20px;
+    color:#00cc99;
+}
+.infolita {
+	background-color:inherit;
+	z-index: 10;
+    position: fixed;
+    overflow: hidden;
+    float: left;
+    text-transform: uppercase;
+    width: auto;
+    padding-left: 10px;
+    padding-right:10px;
+    max-width: 80%;
+    top: 6px;
+    display:block;
+    border:1px dotted #00cc99;
+    text-align: center;
+    margin-top:48px;
+    line-height: 24px;
+    color:#00cc99;
+    display:none;
+}
+
 .zoom {
 	-webkit-touch-callout: none!important;
 	margin-top:-3px;
@@ -1488,9 +1552,6 @@ hr {
 	-webkit-user-select: none!important;
 }
 header {
-	-webkit-user-select: none!important;
-}
-#lighttableContent {
 	-webkit-user-select: none!important;
 }
 #sidebar {
@@ -1532,7 +1593,7 @@ header {
 	float:right;
 	width:100px;
 	height:50px;
-	z-index: 10;
+	z-index: 9;
 	right:-45px;
 	vertical-align:text-top;
 }
@@ -1732,7 +1793,7 @@ label:before {
 	font-size:22px;
 }
 .MENU_LANGUAGE a {
-	font-size:16px!important;
+	font-size:12px!important;
 }
 
 li.MENU_OVERVIEW.mobile-overview {
@@ -1816,7 +1877,7 @@ header {
 	float:right;
 	width:100px;
 	height:50px;
-	z-index: 10;
+	z-index: 9;
 	right:-45px;
 }
 .mobile-sidebar-back {
@@ -1863,13 +1924,22 @@ header {
 	display:none;
 	}
 	#right-nav {
-	float:right;
-	width:30%;
-	display:block;
-	padding-right:10px;
-	text-align:right;
-	top:0px;
-	margin-top:-10px;
+    float: right;
+    width: 30%;
+    display: block;
+    padding-right: 10px;
+    text-align: right;
+    top: 0px;
+    margin-top: -10px;
+    margin-right: 30px;
+	}
+	.zoom {
+    margin-top: 3px;
+    margin-left: 90%;
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    width: 100%;
 	}
 	.menu-icon {
     font-size: 35px !important;
@@ -1881,10 +1951,20 @@ header {
     text-transform: none;
     z-index: 10;
 	}
+	#infotext {
+	font-size:8px;
+	line-height:12px;
+	max-width:70%;
+	}
 }
 
 @media only screen and (max-device-width : 360px) {
-	
+	#right-nav {
+    display: none;
+	}
+	.right-nav-small {
+		display:block;
+	}
 	#sidebar {
 	opacity: 0.9;
 	z-index: 10;
@@ -1910,7 +1990,7 @@ header {
 	float:right;
 	width:100px;
 	height:50px;
-	z-index: 10;
+	z-index: 9;
 	right:-45px;
 	}
 	.mobile-sidebar-back {
@@ -1997,7 +2077,14 @@ header {
 }
 
 @media only screen and (max-device-width : 320px) {
-
+	.zoom {
+    margin-top: 3px;
+    margin-left: 78%;
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    width: 100%;
+	}
 	
 	#metadataBar, #annotationBar, #inscriptionBar, #searchBar {
 	background-color: #EEEEEE!important;
